@@ -1,0 +1,421 @@
+fileFormatVersion: 2
+guid: b830f89fa0cc94d7b95c1ea991db6087
+timeCreated: 1436564268
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Ankle_L
+    100002: Ankle_R
+    100004: Armature
+    100006: Chest
+    100008: Femur_L
+    100010: Femur_R
+    100012: Foot_L
+    100014: Foot_L_end
+    100016: Foot_R
+    100018: Foot_R_end
+    100020: ForeArm_L
+    100022: ForeArm_R
+    100024: Hand_L
+    100026: Hand_L_end
+    100028: Hand_R
+    100030: Hand_R_end
+    100032: Head
+    100034: Head_end
+    100036: Jaw
+    100038: Jaw_end
+    100040: Neck
+    100042: Pelvis
+    100044: //RootNode
+    100046: Raptor
+    100048: Stomach
+    100050: Tail1
+    100052: Tail2
+    100054: Tail3
+    100056: Tail4
+    100058: Tail4_end
+    100060: Thigh_L
+    100062: Thigh_R
+    100064: UpperArm_L
+    100066: UpperArm_R
+    400000: Ankle_L
+    400002: Ankle_R
+    400004: Armature
+    400006: Chest
+    400008: Femur_L
+    400010: Femur_R
+    400012: Foot_L
+    400014: Foot_L_end
+    400016: Foot_R
+    400018: Foot_R_end
+    400020: ForeArm_L
+    400022: ForeArm_R
+    400024: Hand_L
+    400026: Hand_L_end
+    400028: Hand_R
+    400030: Hand_R_end
+    400032: Head
+    400034: Head_end
+    400036: Jaw
+    400038: Jaw_end
+    400040: Neck
+    400042: Pelvis
+    400044: //RootNode
+    400046: Raptor
+    400048: Stomach
+    400050: Tail1
+    400052: Tail2
+    400054: Tail3
+    400056: Tail4
+    400058: Tail4_end
+    400060: Thigh_L
+    400062: Thigh_R
+    400064: UpperArm_L
+    400066: UpperArm_R
+    4300000: Raptor
+    7400000: Armature|Idle
+    7400002: Armature|SideStep_Right
+    7400004: Armature|Walk_Cycle
+    9500000: //RootNode
+    13700000: Raptor
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|Idle
+      takeName: Armature|Idle
+      firstFrame: 0
+      lastFrame: 69
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/Stomach
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/Neck
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/Neck/Head/Head_end
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/Neck/Jaw
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/Neck/Jaw/Jaw_end
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_L
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_L/ForeArm_L
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_L/ForeArm_L/Hand_L
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_L/ForeArm_L/Hand_L/Hand_L_end
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_R
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_R/ForeArm_R
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_R/ForeArm_R/Hand_R
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_R/ForeArm_R/Hand_R/Hand_R_end
+        weight: 1
+      - path: Armature/Pelvis/Tail1
+        weight: 1
+      - path: Armature/Pelvis/Tail1/Tail2
+        weight: 1
+      - path: Armature/Pelvis/Tail1/Tail2/Tail3
+        weight: 1
+      - path: Armature/Pelvis/Tail1/Tail2/Tail3/Tail4
+        weight: 1
+      - path: Armature/Pelvis/Tail1/Tail2/Tail3/Tail4/Tail4_end
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Femur_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Femur_L/Ankle_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Femur_L/Ankle_L/Foot_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Femur_L/Ankle_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Femur_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Femur_R/Ankle_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Femur_R/Ankle_R/Foot_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Femur_R/Ankle_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Raptor
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|SideStep_Right
+      takeName: Armature|SideStep_Right
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/Stomach
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/Neck
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/Neck/Head/Head_end
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/Neck/Jaw
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/Neck/Jaw/Jaw_end
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_L
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_L/ForeArm_L
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_L/ForeArm_L/Hand_L
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_L/ForeArm_L/Hand_L/Hand_L_end
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_R
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_R/ForeArm_R
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_R/ForeArm_R/Hand_R
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_R/ForeArm_R/Hand_R/Hand_R_end
+        weight: 1
+      - path: Armature/Pelvis/Tail1
+        weight: 1
+      - path: Armature/Pelvis/Tail1/Tail2
+        weight: 1
+      - path: Armature/Pelvis/Tail1/Tail2/Tail3
+        weight: 1
+      - path: Armature/Pelvis/Tail1/Tail2/Tail3/Tail4
+        weight: 1
+      - path: Armature/Pelvis/Tail1/Tail2/Tail3/Tail4/Tail4_end
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Femur_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Femur_L/Ankle_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Femur_L/Ankle_L/Foot_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Femur_L/Ankle_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Femur_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Femur_R/Ankle_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Femur_R/Ankle_R/Foot_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Femur_R/Ankle_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Raptor
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|Walk_Cycle
+      takeName: Armature|Walk_Cycle
+      firstFrame: 0
+      lastFrame: 23
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/Stomach
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/Neck
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/Neck/Head/Head_end
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/Neck/Jaw
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/Neck/Jaw/Jaw_end
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_L
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_L/ForeArm_L
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_L/ForeArm_L/Hand_L
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_L/ForeArm_L/Hand_L/Hand_L_end
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_R
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_R/ForeArm_R
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_R/ForeArm_R/Hand_R
+        weight: 1
+      - path: Armature/Pelvis/Stomach/Chest/UpperArm_R/ForeArm_R/Hand_R/Hand_R_end
+        weight: 1
+      - path: Armature/Pelvis/Tail1
+        weight: 1
+      - path: Armature/Pelvis/Tail1/Tail2
+        weight: 1
+      - path: Armature/Pelvis/Tail1/Tail2/Tail3
+        weight: 1
+      - path: Armature/Pelvis/Tail1/Tail2/Tail3/Tail4
+        weight: 1
+      - path: Armature/Pelvis/Tail1/Tail2/Tail3/Tail4/Tail4_end
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Femur_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Femur_L/Ankle_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Femur_L/Ankle_L/Foot_L
+        weight: 1
+      - path: Armature/Pelvis/Thigh_L/Femur_L/Ankle_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Femur_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Femur_R/Ankle_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Femur_R/Ankle_R/Foot_R
+        weight: 1
+      - path: Armature/Pelvis/Thigh_R/Femur_R/Ankle_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Raptor
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
