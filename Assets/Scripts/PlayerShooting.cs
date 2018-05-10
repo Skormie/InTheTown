@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+[NetworkSettings(channel = 0, sendInterval = 0f)]
 public class PlayerShooting : NetworkBehaviour {
 
     [SerializeField] float shotCooldown = .3f;
