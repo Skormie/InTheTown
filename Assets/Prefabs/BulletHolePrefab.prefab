@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4645370356670580}
   - component: {fileID: 33198709879722832}
   - component: {fileID: 23082699441169754}
-  - component: {fileID: 64541104390884894}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -37,6 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4182536349680232}
+  - component: {fileID: 114607542875432130}
   m_Layer: 0
   m_Name: BulletHolePrefab
   m_TagString: Untagged
@@ -113,17 +113,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1471109988242746}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &64541104390884894
-MeshCollider:
+--- !u!114 &114607542875432130
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1471109988242746}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_GameObject: {fileID: 1632319695474214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c59b3606cfdc42b18c6e54d1a00bc5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 1
