@@ -12,7 +12,7 @@ public class ShotEffectsManager : MonoBehaviour {
 
     public void Initialize()
     {
-        impactEffect = Instantiate(impactPrefab).GetComponent<ParticleSystem>();
+        //impactEffect = Instantiate(impactPrefab).GetComponent<ParticleSystem>();
     }
 
     public void PlayShotEffects()
@@ -23,10 +23,12 @@ public class ShotEffectsManager : MonoBehaviour {
         gunAudio.Play();
     }
 
-    public void PlayImpactEffect(Vector3 impactPosition)
+    public void PlayImpactEffect(Vector3 impactPosition, Vector3 normal)
     {
-        impactEffect.transform.position = impactPosition;
-        impactEffect.Stop();
-        impactEffect.Play();
+        //Instantiate(impactPrefab).transform.position = impactPosition;
+        Instantiate(impactPrefab, impactPosition, Quaternion.FromToRotation(Vector3.up, normal));
+        //impactEffect.transform.position = impactPosition;
+        //impactEffect.Stop();
+        //impactEffect.Play();
     }
 }

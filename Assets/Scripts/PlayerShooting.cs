@@ -19,7 +19,7 @@ public class PlayerShooting : NetworkBehaviour {
         if (isLocalPlayer)
             canShoot = true;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
         if (!canShoot) return;
@@ -51,18 +51,24 @@ public class PlayerShooting : NetworkBehaviour {
         if (result)
         {
             //health stuff
+            NewPlayerHealth enemy = hit.transform.GetComponent<NewPlayerHealth>();
+
+            if(enemy != null)
+            {
+                enemy.TakeDamage();
+            }
         }
 
-        RpcProcessShotEffects(result, hit.point);
+        RpcProcessShotEffects(result, hit.point, hit.normal);
     }
 
     [ClientRpc] //Server tells all the clients to do something.
-    void RpcProcessShotEffects(bool playImpact, Vector3 point)
+    void RpcProcessShotEffects(bool playImpact, Vector3 point, Vector3 normal)
     {
         shotEffects.PlayShotEffects();
 
         if (playImpact)
-            shotEffects.PlayImpactEffect(point);
+            shotEffects.PlayImpactEffect(point, normal);
     }
 }
 
