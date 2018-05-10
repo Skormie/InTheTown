@@ -7,8 +7,10 @@ public class NewPlayerHealth : NetworkBehaviour {
 
     [SerializeField] int maxHealth = 3;
 
+    [SyncVar (hook = "OnHealthChanged")] int health; //When the value changes it will be shared with all clients. Only the server can set the value of a SyncVar.
+
     Player player;
-    int health;
+
 
     //Awake happens before knowing local player.
     private void Awake()
@@ -44,10 +46,24 @@ public class NewPlayerHealth : NetworkBehaviour {
     [ClientRpc] //All clients process taking damage.
     void RpcTakeDamage(bool died)
     {
+        if (isLocalPlayer)
+        {
+            PlayerCanvas.canvas.FlashDamageEffect();
+        }
+
         if (died)
         {
             Debug.Log("The player is dead.");
             player.Die();
+        }
+    }
+
+    void OnHealthChanged(int value)
+    {
+        health = value;
+        if (isLocalPlayer)
+        {
+            PlayerCanvas.canvas.SetHealth(value);
         }
     }
 }

@@ -24,7 +24,10 @@ public class Player : NetworkBehaviour
     void DisablePlayer()
     {
         if (isLocalPlayer)
+        {
+            PlayerCanvas.canvas.HideReticule();
             mainCamera.SetActive(true);
+        }
 
         onToggleShared.Invoke(false);
 
@@ -41,7 +44,10 @@ public class Player : NetworkBehaviour
     void EnablePlayer()
     {
         if (isLocalPlayer)
+        {
+            PlayerCanvas.canvas.Initialize();
             mainCamera.SetActive(false);
+        }
 
         onToggleShared.Invoke(true);
 
@@ -57,6 +63,12 @@ public class Player : NetworkBehaviour
 
     public void Die()
     {
+        if (isLocalPlayer)
+        {
+            PlayerCanvas.canvas.WriteGameStatusText("You am dead!");
+            PlayerCanvas.canvas.PlayDeathAudio();
+        }
+
         DisablePlayer();
 
         Invoke("Respawn", respawnTime);

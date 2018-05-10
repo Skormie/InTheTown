@@ -9,6 +9,8 @@ public class PlayerShooting : NetworkBehaviour {
     [SerializeField] Transform firePosition;
     [SerializeField] ShotEffectsManager shotEffects;
 
+    [SyncVar (hook = "OnScoreChanged")] int score;
+
     float ellapsedTime;
     bool canShoot;
 
@@ -20,8 +22,14 @@ public class PlayerShooting : NetworkBehaviour {
             canShoot = true;
 	}
 
-	// Update is called once per frame
-	void Update () {
+    [ServerCallback] //Only run on the server.
+    private void OnEnable()
+    {
+        score = 0;
+    }
+
+    // Update is called once per frame
+    void Update () {
         if (!canShoot) return;
 
         ellapsedTime += Time.deltaTime;
@@ -55,7 +63,10 @@ public class PlayerShooting : NetworkBehaviour {
 
             if(enemy != null)
             {
-                enemy.TakeDamage();
+                bool wasKillShot = enemy.TakeDamage();
+
+                if (wasKillShot)
+                    score++;
             }
         }
 
@@ -69,6 +80,15 @@ public class PlayerShooting : NetworkBehaviour {
 
         if (playImpact)
             shotEffects.PlayImpactEffect(point, normal);
+    }
+
+    void OnScoreChanged(int value)
+    {
+        score = value;
+        if (isLocalPlayer)
+        {
+            PlayerCanvas.canvas.SetKills(value);
+        }
     }
 }
 

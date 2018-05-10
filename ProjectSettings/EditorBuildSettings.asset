@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu.unity
-    guid: 00000000000000000000000000000000
-  - enabled: 1
+    guid: 3e66f1d214ee55745a2c9d58da9913cc
+  - enabled: 0
     path: Assets/Scenes/Test.unity
-    guid: 00000000000000000000000000000000
+    guid: 624c6129bd34b164882db88f0820630b
+  - enabled: 1
+    path: Assets/Scenes/Falhalla.unity
+    guid: 46c7a0e31736adc45ae06f5a86207779
   m_configObjects: {}
