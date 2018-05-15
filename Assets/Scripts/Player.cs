@@ -14,11 +14,23 @@ public class Player : NetworkBehaviour
     [SerializeField] float respawnTime = 5f;
 
     GameObject mainCamera;
+    NetworkAnimator anim;
 
     private void Start()
     {
+        anim = GetComponent<NetworkAnimator>();
         mainCamera = Camera.main.gameObject;
         EnablePlayer();
+    }
+
+    //Should add this to the character controller instead.
+    private void Update()
+    {
+        if (!isLocalPlayer)
+            return;
+
+        anim.animator.SetFloat("Speed", Input.GetAxis("Vertical"));
+        anim.animator.SetFloat("Strafe", Input.GetAxis("Horizontal"));
     }
 
     void DisablePlayer()
@@ -67,6 +79,8 @@ public class Player : NetworkBehaviour
         {
             PlayerCanvas.canvas.WriteGameStatusText("You am dead!");
             PlayerCanvas.canvas.PlayDeathAudio();
+
+            anim.SetTrigger("Died");
         }
 
         DisablePlayer();
@@ -81,6 +95,8 @@ public class Player : NetworkBehaviour
             Transform spawn = NetworkManager.singleton.GetStartPosition();
             transform.position = spawn.position;
             transform.rotation = spawn.rotation;
+
+            anim.SetTrigger("Restart");
         }
 
         EnablePlayer();

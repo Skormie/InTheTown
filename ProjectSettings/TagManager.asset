@@ -9,6 +9,7 @@ TagManager:
   - SMG
   - NetworkSpawn
   - Weapon
+  - NetworkController
   layers:
   - Default
   - TransparentFX

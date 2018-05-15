@@ -24,6 +24,13 @@ public class NewPlayerHealth : NetworkBehaviour {
         health = maxHealth;
     }
 
+    [ServerCallback]
+    private void Start()
+    {
+        //health = maxHealth;
+        OnEnable();
+    }
+
     [Server] // Only server allowed to run method.
     public bool TakeDamage()
     {
