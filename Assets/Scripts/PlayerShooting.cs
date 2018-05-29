@@ -9,11 +9,9 @@ public class PlayerShooting : NetworkBehaviour {
     [SerializeField] float shotCooldown = .3f;
     [SerializeField] Transform firePosition;
     [SerializeField] ShotEffectsManager shotEffects;
-    [SerializeField] GameObject manager;
     [SerializeField] Vector3 hit_pos;
-
-    [SerializeField] GameObject player1;
-    [SerializeField] GameObject player2;
+    [SerializeField] public ScriptablePlayerListRuntimeSet playerList;
+    [SerializeField] Gun currentWeapon;
 
     [SyncVar (hook = "OnScoreChanged")] int score;
 
@@ -23,16 +21,10 @@ public class PlayerShooting : NetworkBehaviour {
 	// Use this for initialization
 	void Start () {
         shotEffects.Initialize();
-
+        playerList.Add(transform.gameObject);
         if (isLocalPlayer)
         {
             canShoot = true;
-            player1 = gameObject;
-        }
-        else
-        {
-            player2 = gameObject;
-            //player2.AddComponent<TargetPractice>();
         }
 	}
 
@@ -63,45 +55,39 @@ public class PlayerShooting : NetworkBehaviour {
             if (result)
             {
                 hit_pos = hit.transform.position;
-                //hit.transform.GetComponent<NetworkIdentity>().netId
                 NewPlayerHealth enemy = hit.transform.GetComponent<NewPlayerHealth>();
                 if (enemy != null)
                 {
-                    //gameObject.GetComponent<PlayerCanvas>().WriteLogText("HIT NETWORK ID IS " + hit.transform.gameObject.GetComponent<NetworkIdentity>().netId, 10000);
-                    //Debug.Log("Hit players network id is " + hit.transform.gameObject.GetComponent<NetworkIdentity>().netId);
                     CmdFireShot(firePosition.position, firePosition.forward, hit_pos, hit.transform.gameObject.GetComponent<NetworkIdentity>().netId);
+                    return;
                 }
             }
-            else
-                CmdFireMissedShot(firePosition.position, firePosition.forward);
+            CmdFireMissedShot(firePosition.position, firePosition.forward);
         }
 	}
 
     [Command] //This is run on the server.
     void CmdFireShot(Vector3 origin, Vector3 direction, Vector3 hit_pos, NetworkInstanceId netid)
     {
+        Debug.Log("Player Count is... "+playerList.players.Count);
         //Debug.Log("origin: "+ origin+", direction: "+ direction+ ", hit_pos: "+ hit_pos);
         //Debug.Log("Size of player list " + manager.GetComponent<PlayerList>().players.Count);
         ////Debug.Log("Size of player list " + PlayerList.singleton.GetComponent<PlayerList>().players.Count +", NETID: "+netid+", ");
         //GameObject closestObject = null;
-        foreach (GameObject player in PlayerList.singleton.GetComponent<PlayerList>().players)
+        GameObject player = playerList.GetPlayer(netid);
+
+        Debug.Log("Distance of " + Vector3.Distance(hit_pos, player.transform.position) + ".");
+        if (Vector3.Distance(hit_pos, player.transform.position) < 3)
         {
-            if (player.GetComponent<NetworkIdentity>().netId == netid)
+            //health stuff
+            NewPlayerHealth enemy = playerList.GetPlayer(netid).transform.GetComponent<NewPlayerHealth>();
+
+            if (enemy != null)
             {
-                Debug.Log("Distance of "+ Vector3.Distance(hit_pos, player.transform.position)+".");
-                if (Vector3.Distance(hit_pos, player.transform.position) < 3)
-                {
-                    //health stuff
-                    NewPlayerHealth enemy = player.transform.GetComponent<NewPlayerHealth>();
+                bool wasKillShot = enemy.TakeDamage();
 
-                    if (enemy != null)
-                    {
-                        //bool wasKillShot = enemy.TakeDamage();
-
-                        //if (wasKillShot)
-                        //    score++;
-                    }
-                }
+                if (wasKillShot)
+                    score++;
             }
         }
 
