@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public class NewPlayerHealth : NetworkBehaviour {
 
-    [SerializeField] int maxHealth = 3;
+    [SerializeField] int maxHealth = 10;
 
     [SyncVar (hook = "OnHealthChanged")] int health; //When the value changes it will be shared with all clients. Only the server can set the value of a SyncVar.
 
@@ -27,8 +27,8 @@ public class NewPlayerHealth : NetworkBehaviour {
     [ServerCallback]
     private void Start()
     {
-        //health = maxHealth;
-        OnEnable();
+        health = maxHealth;
+        //OnEnable();
     }
 
     [Server] // Only server allowed to run method.
