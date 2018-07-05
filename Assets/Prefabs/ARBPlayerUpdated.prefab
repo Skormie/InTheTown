@@ -279,7 +279,6 @@ GameObject:
   - component: {fileID: 81133682229500096}
   - component: {fileID: 114609382812345146}
   - component: {fileID: 114521600876799270}
-  - component: {fileID: 114489480505762816}
   m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
@@ -1604,7 +1603,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1343948464231576}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.6713247, y: 0.00000019760301, z: 1.1050762}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4001383108006850}
@@ -2222,7 +2221,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5bbe65c1c4f1245b214c9e85133f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _control: 1
+  control:
+    toggle: 1
+    scale: 1
   range: 40
   speed: 200
   cameraAlignment: 0.8
@@ -2294,7 +2295,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114263333658161666}
-        m_MethodName: set_Control
+        m_MethodName: SetControlToggle
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2339,7 +2340,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: ToggleEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   respawnTime: 5
@@ -2421,7 +2422,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef45407765e860a469677e502677bf0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _control: 0
+  control:
+    toggle: 0
+    scale: 1
   initMode: 2
   inputModulator: {fileID: 11400000, guid: ab48c1fb00d62a2449ad987628bb2f8d, type: 2}
 --- !u!114 &114273415733837618
@@ -2529,6 +2532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aee8c41a53965514fb38bc770289af44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultSet: {fileID: 0}
 --- !u!114 &114448856149604938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2540,9 +2544,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bde5565eeb88c6240a7b42762d780d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateDirection: 1
-  acceleration: 5
-  deAcceleration: 2
+  updateDirection: 0
+  processStateTransitions: 1
+  acceleration: 0
+  deAcceleration: 0
+  maxMovementSpeed: 0
 --- !u!114 &114465494978858076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2555,7 +2561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _control: 1
-  power: 5
+  power: 10
 --- !u!114 &114476026242834570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2574,6 +2580,7 @@ MonoBehaviour:
   radiusScale: 0.985
   range: 0.1
   offset: 0.1
+  maxSlope: 45
 --- !u!114 &114486920248199998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2595,17 +2602,6 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
---- !u!114 &114489480505762816
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1292221993672866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93f3aa371a192d54b867116c1e57dcf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114492301586249222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2618,7 +2614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _control: 1
-  minInput: 0.75
+  minimumInput: 0.75
   input: 0
 --- !u!114 &114508533184603336
 MonoBehaviour:
@@ -2811,6 +2807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 360
+  range: 40
 --- !u!114 &114721437906818380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2854,7 +2851,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1544560d62695fa45867ea00723d061d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _control: 1
+  control:
+    toggle: 1
+    scale: 1
   sensitivity:
     vertical: 4
     horizontal: 4
@@ -2880,7 +2879,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82f57974fdf97b4499b3f3de6d637966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _control: 1
+  control:
+    toggle: 1
+    scale: 1
 --- !u!114 &114851912328710026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2892,6 +2893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bceafc7b3545114ead1e9d00d21016e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lockCursor: 1
 --- !u!114 &114873978186978244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2904,7 +2906,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   apply: 1
-  defaultSet: {fileID: 11400000, guid: bf10040ba1024d947b3ce4ea62f6ea28, type: 2}
 --- !u!114 &114883043453029704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2917,6 +2918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _control: 1
+  minSprintTime: 0.8
 --- !u!114 &114944244191636650
 MonoBehaviour:
   m_ObjectHideFlags: 1

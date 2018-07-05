@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class CursorHideShow : MonoBehaviour {
 
-    private void Start()
+    void Start()
     {
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 
-    private void Update()
+    void Update()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    private void OnApplicationFocus(bool focus)
+    /*void OnApplicationFocus(bool focus)
     {
         if (focus)
         {
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = false;
         }
-    }
+    }*/
 }

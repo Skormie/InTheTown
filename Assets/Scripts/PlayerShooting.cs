@@ -11,7 +11,7 @@ public class PlayerShooting : NetworkBehaviour {
     [SerializeField] ShotEffectsManager shotEffects;
     [SerializeField] Vector3 hit_pos;
     [SerializeField] public ScriptablePlayerListRuntimeSet playerList;
-    [SerializeField] Gun currentWeapon;
+    [SerializeField] ScriptableGun currentWeapon;
 
     [SyncVar (hook = "OnScoreChanged")] int score;
 

@@ -112,7 +112,7 @@ namespace AFPC
         }
         public virtual float ProcessAxisAcceleration(float value, float input, float speed, bool snap)
         {
-            if (snap)
+            if (snap && speed > 0f)
                 value = ProcessSnap(value, input);
 
             return Mathf.MoveTowards(value, MaxValue * Mathf.Abs(input) * Mathf.Sign(input), speed * Time.deltaTime);
@@ -212,7 +212,7 @@ namespace AFPC
     {
         public interface IModifiers : IModifiersBase
         {
-            
+
         }
         [Serializable]
         public class Modifiers : ModifiersBase, IModifiers
@@ -227,7 +227,7 @@ namespace AFPC
             }
             public Modifiers(float acceleration, float deAcceleration, bool snap) : base(acceleration, deAcceleration, snap)
             {
-                
+
             }
         }
     }
